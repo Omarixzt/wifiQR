@@ -27,9 +27,10 @@ form {
   background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
-  width: 320px;
+  width: 90%;
+  max-width: 320px;
   backdrop-filter: blur(10px);
   animation: fadeIn 1.2s ease-in-out;
   transition: background 0.5s ease, transform 0.3s ease;
@@ -62,6 +63,9 @@ input {
   border: 2px solid #d1d5db;
   border-radius: 8px;
   transition: all 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
 }
 
 /* Fancy Input Focus Effect */
@@ -97,6 +101,7 @@ button {
   width: 100%;
   animation: fadeIn 1.5s ease-in-out 0.8s forwards;
   opacity: 0;
+  margin-top: 1rem;
 }
 
 /* Button Hover Effect */
@@ -138,4 +143,23 @@ body.dark .toggle-btn {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  form {
+    padding: 1rem;
+    width: 95%;
+  }
 
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .toggle-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
