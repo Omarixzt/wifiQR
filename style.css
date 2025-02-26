@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: linear-gradient(-45deg, #ff7eb3, #ff758c, #ff7eb3, #84fab0, #8fd3f4, #f43f5e);
+  background-size: 400% 400%;
+  animation: randomGradient 10s infinite ease-in-out;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+@keyframes randomGradient {
+  0% { background-position: 0% 0%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 50% 100%; }
+  75% { background-position: 0% 50%; }
+  100% { background-position: 50% 0%; }
+}
+
+/* Form Fade-in Animation */
+form {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  text-align: center;
+  width: 320px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1.2s ease-in-out;
+  transition: background 0.5s ease, transform 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Dark Mode Background */
+body.dark {
+  color: #f8fafc;
+  background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #53354a, #2c2c54, #212121);
+  background-size: 400% 400%;
+  animation: randomGradient 10s infinite ease-in-out;
+}
+
+body.dark form {
+  background: rgba(30, 41, 59, 0.95);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Input Fields */
+input {
+  color: #374151;
+  font-family: monospace;
+  height: 40px;
+  padding: 0 16px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fancy Input Focus Effect */
+input:focus {
+  border-color: #0ea5e9;
+  outline: none;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+  transform: scale(1.03);
+}
+
+/* Dark Mode Input Styling */
+body.dark input {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-color: #64748b;
+}
+
+body.dark input::placeholder {
+  color: #94a3b8;
+}
+
+/* Buttons */
+button {
+  height: 2.75rem;
+  background-color: #0ea5e9;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  animation: fadeIn 1.5s ease-in-out 0.8s forwards;
+  opacity: 0;
+}
+
+/* Button Hover Effect */
+button:hover {
+  background-color: #0284c7;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Dark Mode Toggle Button */
+.toggle-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.toggle-btn {
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  animation: fadeIn 1.2s ease-in-out 0.8s forwards;
+  opacity: 0;
+}
+
+/*  Dark Mode Toggle Button Styling */
+body.dark .toggle-btn {
+  background: #334155;
+  color: white;
+}
+
+/* Floating Button Effect */
+.toggle-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
