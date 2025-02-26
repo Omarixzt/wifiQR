@@ -1,7 +1,7 @@
 const img = document.querySelector('img');
 const ssid = document.querySelector('.ssid');
 const password = document.querySelector('.password');
-const printButton = document.querySelector('.print-btn'); // Select print button properly
+const downloadButton = document.querySelector('.download-btn'); // Changed from print-btn to download-btn
 const toggleBtn = document.getElementById('toggle-mode');
 const body = document.body;
 
@@ -14,17 +14,24 @@ function update() {
 ssid.addEventListener('keyup', update);
 password.addEventListener('keyup', update);
 
-// Ensure only the print button triggers print
-printButton.addEventListener('click', (event) => {
+// Download QR Code
+downloadButton.addEventListener('click', (event) => {
   event.preventDefault(); // Prevent form submission issues
-  window.print();
+
+  // Create a temporary anchor element to trigger the download
+  const link = document.createElement('a');
+  link.href = img.src;
+  link.download = 'wifi_qr_code.png'; // Set the filename for the downloaded image
+  document.body.appendChild(link);
+  link.click(); // Trigger the download
+  document.body.removeChild(link); // Clean up
 });
 
 // Dark Mode Toggle
 toggleBtn.addEventListener('click', (event) => {
   event.preventDefault(); // Prevent default behavior
   event.stopPropagation(); // Stop event bubbling (so it doesn't trigger print)
-  
+
   body.classList.toggle('dark');
   const isDark = body.classList.contains('dark');
   localStorage.setItem('darkMode', isDark);
